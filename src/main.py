@@ -1,7 +1,10 @@
 from rich.console import Console
 
+from src import intro_view
+
 console = Console()
 
 
 def start():
-    console.print("Hello World!")
+    report_paths = intro_view.start()
+    console.print(report_paths)
