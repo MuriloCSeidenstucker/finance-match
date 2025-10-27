@@ -1,9 +1,11 @@
+from typing import Dict
+
 from rich.console import Console
 
 console = Console()
 
 
-def start():
+def introduction_view() -> Dict[str, str]:
     bank_report_path = console.input("Insira o PATH do relatório bancário: ")
     app_report_path = console.input(
         "Insira o PATH do relatório do app de gestão financeira: "
