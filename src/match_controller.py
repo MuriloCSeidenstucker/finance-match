@@ -11,6 +11,7 @@ console = Console()
 def expense_match(
     bank_expenses: List[Expense],
     app_expenses: List[Expense],
+    acceptable_diff: float = 0.6,
 ) -> List[Expense]:
     response = []
 
@@ -28,7 +29,7 @@ def expense_match(
             response.append(app_expense)
             continue
 
-        if not title_match(app_expense.title, bank_expense.title):
+        if not title_match(app_expense.title, bank_expense.title, acceptable_diff):
             app_expense.details = (
                 "Valor corresponde, mas a descrição diverge. Verifique se está correta."
             )

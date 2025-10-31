@@ -10,7 +10,7 @@ def remove_accents_and_spaces(input_str: str) -> str:
     )
 
 
-def title_match(a: str, b: str, acceptable_diff: float = 0.5) -> bool:
+def title_match(a: str, b: str, acceptable_diff: float) -> bool:
     processed_a = remove_accents_and_spaces(a)
     processed_b = remove_accents_and_spaces(b)
     distance = Levenshtein.ratio(processed_a, processed_b)
